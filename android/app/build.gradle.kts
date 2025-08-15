@@ -7,7 +7,12 @@ plugins {
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
-
+buildscript {
+    dependencies {
+        // ✅ Required for Firebase google-services.json to work
+        classpath("com.google.gms:google-services:4.3.15")
+    }
+}
 android {
     namespace = "com.example.yegna_gebeya"
     compileSdk = flutter.compileSdkVersion
